@@ -10,6 +10,8 @@ It provides tools for generating lecture summaries, chatting with an AI assistan
 
 The extension works while the user watches a recorded lecture and uses the lecture content to provide learning tools that make reviewing and understanding the material easier.
 
+> This repository is a project showcase only. The source code is kept private.
+
 ## Features
 
 * Lecture summary PDF generation
@@ -45,6 +47,7 @@ The chat interface allows students to ask questions about the lecture while watc
 ## Tech Stack
 
 * TypeScript
+* Chrome Extension Manifest V3
 * Chrome `tabCapture`
 * Offscreen Documents
 * Web Audio API
@@ -57,11 +60,13 @@ The chat interface allows students to ask questions about the lecture while watc
 
 The project is divided into two main parts:
 
-* **Chrome Extension** - Provides the user interface, manages the lecture flow, and communicates with the backend.
+* **Chrome Extension** - Provides the user interface, manages the lecture flow, captures lecture audio, and communicates with the backend.
 * **Node.js Server** - Handles transcription, AI-based summary generation, lecture Q&A, practice generation, PDF creation, and real-time communication.
 
-The codebase is organized into modular components for content scripts, background logic, offscreen processing, server routes, and backend services.
+The full implementation is organized into modular components for content scripts, background logic, offscreen audio processing, server routes, and backend services.
 
 ## Status
 
 This project is a working prototype and personal learning project focused on Chrome Extensions, backend development, audio processing, and AI integration.
+
+The public repository is intended to present the project concept, features, and screenshots. The source code is not included.
