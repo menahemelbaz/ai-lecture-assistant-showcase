@@ -18,6 +18,18 @@ The extension works while the user watches a recorded lecture and uses the lectu
 * AI chat based on the lecture transcript
 * Lecture topic practice
 
+## Tech Stack
+
+* TypeScript
+* Chrome Extension Manifest V3
+* Chrome `tabCapture`
+* Offscreen Documents
+* Web Audio API
+* Node.js
+* Express.js
+* WebSocket
+* OpenAI API
+
 ## Screenshots
 
 ### Main Extension Button
@@ -43,18 +55,6 @@ The extension allows the user to generate a lecture summary while watching the r
 The chat interface allows students to ask questions about the lecture while watching, based on the accumulated lecture transcript.
 
 <img src="assets/chat-panel.png" alt="Lecture-Based AI Chat" width="700">
-
-## Tech Stack
-
-* TypeScript
-* Chrome Extension Manifest V3
-* Chrome `tabCapture`
-* Offscreen Documents
-* Web Audio API
-* Node.js
-* Express.js
-* WebSocket
-* OpenAI API
 
 ## Architecture
 
