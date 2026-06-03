@@ -21,14 +21,14 @@ The extension works while the user watches a recorded lecture and uses the lectu
 ## Tech Stack
 
 * TypeScript
-* Chrome Extension Manifest V3
-* Chrome `tabCapture`
-* Offscreen Documents
-* Web Audio API
+* JavaScript
 * Node.js
 * Express.js
-* WebSocket
+* Web Audio API
 * OpenAI API
+* WebSocket
+* Chrome `tabCapture`
+* Offscreen Documents
 
 ## Screenshots
 
