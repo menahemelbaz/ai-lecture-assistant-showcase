@@ -6,67 +6,76 @@
 
 AI Lecture Assistant is a Chrome extension designed to help students study recorded lectures more efficiently.
 
-It provides tools for generating lecture summaries, chatting with an AI assistant based on the lecture transcript, and practicing lecture topics.
+It captures lecture audio while the user watches a recorded video, builds a transcript, and uses the lecture content to support review and practice.
 
-The extension works while the user watches a recorded lecture and uses the lecture content to provide learning tools that make reviewing and understanding the material easier.
+The extension provides tools for generating printable lecture summaries, asking questions based on the active transcript, and practicing lecture topics with immediate feedback.
 
 > This repository is a project showcase only. The source code is kept private.
 
 ## Features
 
-* Lecture summary PDF generation
-* AI chat based on the lecture transcript
-* Lecture topic practice
+* Printable lecture summary generation
+* AI chat based on the active lecture transcript
+* Topic-based practice questions with feedback and explanations
 
-## Tech Stack
+## Configuration
 
-* TypeScript
-* JavaScript
-* Node.js
-* Express.js
-* Web Audio API
-* OpenAI API
-* WebSocket
-* Chrome `tabCapture`
-* Offscreen Documents
+The extension settings page allows users to add, update, or remove their personal OpenAI API key. The key is stored locally in Chrome extension storage and is used for direct requests to OpenAI.
+
+<img src="assets/api-key-settings.png" alt="OpenAI API Key Settings" width="800">
 
 ## Screenshots
 
 ### Main Extension Button
 
-The extension adds a floating button on top of the lecture page, allowing the user to access the study tools while watching the lecture.
+The extension adds a floating button to the lecture page, allowing the user to access the study tools while watching the lecture.
 
 <img src="assets/main-button.png" alt="Main Extension Button" width="350">
 
 ### Study Tools Menu
 
-The extension provides quick access to the main learning tools: lecture summaries, lecture-based AI chat, and practice questions.
+The extension provides quick access to lecture summaries, lecture-based AI chat, and practice questions.
 
 <img src="assets/feature-buttons.png" alt="Study Tools Menu" width="300">
 
 ### Summary Generation
 
-The extension allows the user to generate a lecture summary while watching the recorded lecture.
+The extension generates a formatted lecture summary that can be printed or saved as a PDF.
 
 <img src="assets/summary-process.png" alt="Summary Generation" width="700">
 
 ### Lecture-Based AI Chat
 
-The chat interface allows students to ask questions about the lecture while watching, based on the accumulated lecture transcript.
+The chat interface allows students to ask questions based on the accumulated transcript of the active lecture.
 
 <img src="assets/chat-panel.png" alt="Lecture-Based AI Chat" width="700">
+
+### Practice Questions
+
+The practice interface generates questions from lecture topics and provides immediate feedback with explanations.
+
+<img src="assets/practice-questions.png" alt="Lecture Practice Questions" width="700">
+
+## Tech Stack
+
+* TypeScript
+* Chrome `tabCapture`
+* Offscreen Documents
+* Web Audio API
+* Node.js
+* Express.js
+* WebSocket
+* OpenAI API
 
 ## Architecture
 
 The project is divided into two main parts:
 
-* **Chrome Extension** - Provides the user interface, manages the lecture flow, captures lecture audio, and communicates with the backend.
-* **Node.js Server** - Handles transcription, AI-based summary generation, lecture Q&A, practice generation, PDF creation, and real-time communication.
+* **Chrome Extension** - Provides the user interface, coordinates tab-audio capture, manages lecture sessions, and generates transcript-based study tools.
+* **Node.js Server** - Handles audio transcription and streams transcript updates back to the extension through WebSocket.
 
-The full implementation is organized into modular components for content scripts, background logic, offscreen audio processing, server routes, and backend services.
+The codebase is organized into modular components for content scripts, background logic, offscreen audio processing, transcript storage, and AI-powered learning features.
 
 ## Status
 
-This project is a working prototype and personal learning project focused on Chrome Extensions, backend development, audio processing, and AI integration.
-
-The public repository is intended to present the project concept, features, and screenshots. The source code is not included.
+This project is a working prototype and personal learning project focused on Chrome extension development, browser audio capture, real-time communication, and AI-assisted learning.
