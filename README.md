@@ -10,7 +10,7 @@ It captures lecture audio while the user watches a recorded video, builds a tran
 
 The extension provides tools for generating printable lecture summaries, asking questions based on the active transcript, and practicing lecture topics with immediate feedback.
 
-> This repository is a project showcase only. The source code is kept private.
+All AI features run directly against the user's personal OpenAI API key from within the extension — the project no longer requires a backend server.
 
 ## Features
 
@@ -20,7 +20,7 @@ The extension provides tools for generating printable lecture summaries, asking 
 
 ## Configuration
 
-The extension settings page allows users to add, update, or remove their personal OpenAI API key. The key is stored locally in Chrome extension storage and is used for direct requests to OpenAI.
+The extension settings page allows users to add, update, or remove their personal OpenAI API key. The key is stored locally in Chrome extension storage and is used only for direct requests to OpenAI. On first install, the settings page opens automatically so the user can add their key before using the extension.
 
 <img src="assets/api-key-settings.png" alt="OpenAI API Key Settings" width="800">
 
@@ -62,16 +62,12 @@ The practice interface generates questions from lecture topics and provides imme
 * Chrome `tabCapture`
 * Offscreen Documents
 * Web Audio API
-* Node.js
-* Express.js
-* WebSocket
-* OpenAI API
+* OpenAI API (Whisper transcription and chat models)
 
 ## Architecture
 
-The project is divided into two main parts:
+The extension runs entirely on the client. It provides the user interface, coordinates tab-audio capture, manages lecture sessions, transcribes audio, and generates transcript-based study tools.
 
-* **Chrome Extension** - Provides the user interface, coordinates tab-audio capture, manages lecture sessions, and generates transcript-based study tools.
-* **Node.js Server** - Handles audio transcription and streams transcript updates back to the extension through WebSocket.
+Captured audio is transcribed by calling the OpenAI transcription API directly from the offscreen document. Summaries, chat answers, and practice questions are produced by calling the OpenAI chat API directly from the background service worker. All requests use the user's personal API key, and no lecture data passes through any intermediate server.
 
 The codebase is organized into modular components for content scripts, background logic, offscreen audio processing, transcript storage, and AI-powered learning features.
