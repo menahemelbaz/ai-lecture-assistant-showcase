@@ -71,3 +71,7 @@ The extension runs entirely on the client. It provides the user interface, coord
 Captured audio is transcribed by calling the OpenAI transcription API directly from the offscreen document. Summaries, chat answers, and practice questions are produced by calling the OpenAI chat API directly from the background service worker. All requests use the user's personal API key, and no lecture data passes through any intermediate server.
 
 The codebase is organized into modular components for content scripts, background logic, offscreen audio processing, transcript storage, and AI-powered learning features.
+
+## Privacy
+
+Read the [AI Lecture Assistant Privacy Policy](./PRIVACY.md).
